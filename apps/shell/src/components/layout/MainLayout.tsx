@@ -7,7 +7,7 @@ export default function MainLayout() {
   const [isSheetOpen, setSheetOpen] = useState(false);
 
   return (
-    <div className="h-screen bg-gray-100 flex flex-col">
+    <div className="h-screen bg-background flex flex-col">
       <Sidebar isOpen={isSheetOpen} onOpenChange={setSheetOpen} />
 
       <main className="flex-1 overflow-x-hidden overflow-y-auto">

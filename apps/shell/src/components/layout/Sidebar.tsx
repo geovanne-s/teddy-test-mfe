@@ -25,7 +25,7 @@ type NavItemProps = {
 const NavItem = ({ to, icon: Icon, children, onClick }: NavItemProps) => {
   return (
     <li>
-      <NavLink to={to} onClick={onClick}>
+      <NavLink to={to} end={true} onClick={onClick}>
         {({ isActive }) => (
           <div
             className={`group relative flex items-center py-3 px-0 rounded-md transition-colors w-full hover:text-primary ${
@@ -91,7 +91,7 @@ export default function NavigationSheet({
               Clientes
             </NavItem>
             <NavItem
-              to="/clientes-selecionados"
+              to="/clientes/clientes-selecionados"
               icon={VerifiedUserIcon}
               onClick={handleLinkClick}
             >
