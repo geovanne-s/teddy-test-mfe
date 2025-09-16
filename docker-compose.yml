@@ -1,0 +1,20 @@
+services:
+  clients:
+    build:
+      context: .
+      dockerfile: ./apps/clients/Dockerfile
+    container_name: mfe_clients
+    ports:
+      - "5001:80"
+
+  shell:
+    build:
+      context: .
+      dockerfile: ./apps/shell/Dockerfile
+      args:
+        VITE_CLIENTS_APP_URL: http://localhost:5001/assets/remoteEntry.js
+    container_name: mfe_shell
+    ports:
+      - "8080:80"
+    depends_on:
+      - clients

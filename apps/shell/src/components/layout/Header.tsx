@@ -34,6 +34,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
         <nav className="hidden md:flex items-center space-x-2 text-sm font-medium absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <NavLink
             to="/clientes"
+            end={true}
             className={({ isActive }) =>
               isActive ? activeNavLinkClass : navLinkClass
             }
@@ -42,6 +43,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
           </NavLink>
           <NavLink
             to="/clientes/clientes-selecionados"
+            end={true}
             className={({ isActive }) =>
               isActive ? activeNavLinkClass : navLinkClass
             }
@@ -55,7 +57,9 @@ export default function Header({ onMenuClick }: HeaderProps) {
       </div>
 
       <div className="shrink-0">
-        <span className="text-gray-600">Olá, {userName ?? "Usuário"}</span>
+        <span className="text-gray-600">
+          Olá, <strong>{userName ?? "Usuário"}</strong>
+        </span>
       </div>
     </header>
   );

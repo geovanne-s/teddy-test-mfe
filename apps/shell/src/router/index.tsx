@@ -2,7 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import LoginScreen from "../features/auth/LoginScreen.tsx";
 
 import MainLayout from "../components/layout/MainLayout";
-// import Dashboard from "../features/dashboard/Dashboard"; // Crie este componente depois
+import { lazy, Suspense } from "react";
+const ClientsPage = lazy(() => import("clientsApp/ClientsMfe"));
 
 export const router = createBrowserRouter([
   {
@@ -10,13 +11,23 @@ export const router = createBrowserRouter([
     element: <LoginScreen />,
   },
   {
-    path: "/clientes",
+    path: "/clientes/*",
     element: <MainLayout />,
-    // children: [
-    //   {
-    //     index: true,
-    //     element: <Dashboard />,
-    //   },
-    // ],
+    children: [
+      {
+        path: "*",
+        element: (
+          <Suspense
+            fallback={
+              <div className="p-6 font-semibold">
+                Carregando MFE de Clientes...
+              </div>
+            }
+          >
+            <ClientsPage />
+          </Suspense>
+        ),
+      },
+    ],
   },
 ]);
