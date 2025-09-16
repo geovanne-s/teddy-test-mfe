@@ -57,7 +57,9 @@ export default function Header({ onMenuClick }: HeaderProps) {
       </div>
 
       <div className="shrink-0">
-        <span className="text-gray-600">Olá, {userName ?? "Usuário"}</span>
+        <span className="text-gray-600">
+          Olá, <strong>{userName ?? "Usuário"}</strong>
+        </span>
       </div>
     </header>
   );
