@@ -69,7 +69,7 @@ export function EditClientDialog({ client }: EditClientDialogProps) {
 
       setOpen(false);
     } catch (error) {
-      alert("Falha ao atualizar o cliente.");
+      console.log("Falha ao atualizar o cliente.");
     }
   };
 

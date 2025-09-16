@@ -33,7 +33,6 @@ export function DeleteClientDialog({
     try {
       await dispatch(deleteClient(clientId)).unwrap();
     } catch (error) {
-      alert("Falha ao excluir o cliente.");
       setOpen(false);
     }
   };
@@ -53,7 +52,8 @@ export function DeleteClientDialog({
         <DialogHeader>
           <DialogTitle>Excluir cliente:</DialogTitle>
           <DialogDescription>
-            Você está pestes a escluir o cliente: <strong>{clientName}</strong>.
+            Você está prestes a excluir o cliente: <strong>{clientName}</strong>
+            .
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>

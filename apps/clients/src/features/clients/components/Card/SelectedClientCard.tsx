@@ -1,4 +1,4 @@
-import { deselectClient, type Client } from "@/features/clients/clientsSlice";
+import { deselectClient } from "@/features/clients/clientsSlice";
 import {
   Card,
   CardContent,
@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Minus } from "lucide-react";
 import { formatCurrencyBRL } from "@/lib/utils";
 import { useAppDispatch } from "@/hooks/hooks.ts";
+import { Client } from "@/types/index.ts";
 
 export function SelectedClientCard({ client }: { client: Client }) {
   const dispatch = useAppDispatch();

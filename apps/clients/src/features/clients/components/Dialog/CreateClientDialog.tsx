@@ -49,7 +49,6 @@ export function CreateClientDialog({
       setOpen(false);
     } catch (error) {
       console.error("Falha ao criar cliente:", error);
-      alert("Não foi possível criar o cliente. Tente novamente.");
     }
   };
 
